@@ -1,0 +1,11 @@
+#!/bin/bash
+
+cd target
+
+for apng in `ls`
+do
+  ./../apng2gif/apng2gif ${apng} ../temp/${apng}.gif
+  convert -loop 0 ../temp/${apng}.gif ../result/${apng}_i.gif
+done
+
+cd ..
